@@ -1,11 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
-
-#This is going to be a very simple RNN
+# Simple RNN
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
@@ -83,7 +77,7 @@ predicted_stock_price = scaler.inverse_transform(temp.reshape(60,1))
 actual = scaler.inverse_transform(X_test.reshape(90,1)) 
 
 # Visualising the results
-plt.plot(predicted_stock_price[30:60], color = 'red', label = 'Future Prediction')
+plt.plot(list(range(60,90)), predicted_stock_price[30:60], color = 'red', label = 'Future Prediction')
 plt.plot(actual[:60], color = 'blue', label = 'Actual price')
 plt.title('RNN prediction of stock price')
 plt.xlabel('Time')
